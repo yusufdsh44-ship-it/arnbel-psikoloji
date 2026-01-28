@@ -125,13 +125,17 @@ Kurumsal psikologun **2.080 belediye personelini** Notion benzeri kullanici dost
 | Ses Kaydi | Referans path |
 | Transkript | Whisper API ciktisi |
 
-### 3.4 AI ANALIZI (Otomatik)
+### 3.4 AI ANALIZI (Psikologa Yardimci Oneri Sistemi)
 **Kaynak:** Transkript + context → AI ciktisi
+
+> **NOT:** AI Analizi triyaj hesaplamasina **DAHİL DEĞİL**.
+> Sadece psikologa yardimci oneri ureten bir sistemdir.
+> Psikolog onerileri gorur, degerlendirir ve kabul/reddet/duzenle secenekleriyle kullanir.
 
 | Cikti | Aciklama |
 |-------|----------|
 | Kacirilan Noktalar | Psikologun fark etmemis olabilecegi konular |
-| Risk Degerlendirmesi | 1-5 puan + gerekcesi |
+| Risk Degerlendirmesi | Oneri niteliginde (triyaja etki etmez) |
 | Tani Izlenimi Onerisi | DSM-5 uyumlu oneri |
 | Tedavi Plani Onerisi | Mudahale onerileri |
 | Mudurluk Baglantisi | Sistemik sorunlarla iliski |
@@ -209,14 +213,9 @@ TRIYAJ = (Mud.Denge × 0.50) + (Mud.RuhSag × 0.50)
 TRIYAJ = (SCL-90 × 0.60) + (Mud.Denge × 0.20) + (Mud.RuhSag × 0.20)
 ```
 
-**Asama 3: + Seans**
+**Asama 3: + Seans (FİNAL)**
 ```
-TRIYAJ = (SCL-90 × 0.35) + (Seans × 0.40) + (Mudurluk × 0.25)
-```
-
-**Asama 4: + AI Analiz**
-```
-TRIYAJ = (SCL-90 × 0.30) + (Seans × 0.35) + (AI × 0.20) + (Mudurluk × 0.15)
+TRIYAJ = (SCL-90 × 0.40) + (Seans × 0.40) + (Mudurluk × 0.20)
 ```
 
 ### Mudurluk Triyaji
@@ -238,7 +237,6 @@ MUD.TRIYAJ = (Denge × 0.25) + (RuhSag × 0.25) + (Ort.SCL × 0.25) + (Ort.Seans
 | Mudurluk Denge (-3.5 ile +35) | `50 - (denge × 1.5)` | 0-100 |
 | SCL-90 GSI (0-4) | `GSI × 25` | 0-100 |
 | Seans Risk (1-5) | `(puan - 1) × 25` | 0-100 |
-| AI Risk (1-5) | `(puan - 1) × 25` | 0-100 |
 
 ### Triyaj Kategorileri
 | Puan | Kategori | Renk | Aksiyon |
@@ -405,6 +403,7 @@ anket-1--2/
 | 2026-01-28 | Stratejik perspektif eklendi (Makro→Mikro, Sunum Hedefi) |
 | 2026-01-28 | Gorusme sistemi detaylari eklendi (zorunlu/gonullu) |
 | 2026-01-28 | Terminolojiye kanit temelli kavramlar eklendi |
+| 2026-01-28 | AI analizi triyajdan ayrildi (sadece oneri sistemi) |
 
 ---
 
