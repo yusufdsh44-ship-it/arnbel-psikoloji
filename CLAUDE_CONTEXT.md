@@ -5,11 +5,47 @@
 
 ---
 
-## 1. Proje Amaci
+## 1. Stratejik Amac
 
 **ARNBEL** - Arnavutkoy Belediyesi Kurumsal Psikolojik Danismanlik Sistemi
 
-Kurumsal psikologun **2.080+ belediye personelini** Notion benzeri kullanici dostu bir arayuzle takip etmesini saglayan, anket+test+seans verilerini birlestiren klinik yonetim sistemi.
+> Psikolog belediyenin **"psikolojik fotografini"** cekiyor.
+> Amac: Baskan ve IK Muduru'ne **kanit temelli risk analizi** sunmak.
+
+### Makro → Mikro Stratejisi
+
+| Asama | Arac | Kapsam | Cikti |
+|-------|------|--------|-------|
+| 1. ANKET | Anonim anket | 30 mudurluk | **Kurumsal fotograf** |
+| 2. SCL-90 | Semptom tarama | Gorusme oncesi | **Bireysel fotograf** |
+| 3. SEANS | Klinik gorusme | 20-30 dk | **Klinik degerlendirme** |
+| 4. TRIYAJ | Veri birlestirme | Tum kaynaklar | **Kanit temelli risk raporu** |
+
+### Sunum Hedefi
+
+**Hedef Kitle:**
+- Belediye Baskani
+- IK Muduru
+
+**Sunum Icerigi:**
+- Mudurluk bazli risk haritasi
+- Kisi bazli kritik vakalar (anonim)
+- Sistemik sorun tespitleri
+- Oneri ve mudahale planlari
+
+---
+
+## 2. Proje Tanimi
+
+Kurumsal psikologun **2.080 belediye personelini** Notion benzeri kullanici dostu bir arayuzle takip etmesini saglayan, anket+test+seans verilerini birlestiren klinik yonetim sistemi.
+
+### Gorusme Sistemi
+
+| Ozellik | Aciklama |
+|---------|----------|
+| Ilk gorusme | **ZORUNLU** - 2.080 kisinin tamami |
+| Ikinci gorusme | **GONULLU** - Kisi isterse |
+| Siralama | **KARISIK** - Mudurluk sirasina gore degil, musaitlige gore |
 
 ### Kullanim Senaryolari
 1. **Klinik Gorusme** - 20-30 dk standart protokol, ses kaydi, AI analiz
@@ -26,9 +62,9 @@ Kurumsal psikologun **2.080+ belediye personelini** Notion benzeri kullanici dos
 
 ---
 
-## 2. Veri Katmanlari
+## 3. Veri Katmanlari
 
-### 2.1 ANKET VERILERI (Mudurluk Bazli)
+### 3.1 ANKET VERILERI (Mudurluk Bazli)
 **Kaynak:** `rapor_verileri.js` + `survey_data` tablosu
 
 | Metrik | Aciklama | Belediye Geneli |
@@ -53,7 +89,7 @@ Kurumsal psikologun **2.080+ belediye personelini** Notion benzeri kullanici dos
 - **Tema Bazli Performans Tablosu** - 10 tema karsilastirma
 - **Acik Uclu Yorumlar** - Personel geri bildirimleri
 
-### 2.2 SCL-90 SONUCLARI (Kisi Bazli)
+### 3.2 SCL-90 SONUCLARI (Kisi Bazli)
 **Kaynak:** Excel import → `personeller` tablosu
 
 | Alan | Aralik | Aciklama |
@@ -75,7 +111,7 @@ Kurumsal psikologun **2.080+ belediye personelini** Notion benzeri kullanici dos
 - Madde 35: Baskalarinin dusuncelerini bilme
 - Madde 62: Kontrol disi dusunceler
 
-### 2.3 SEANS VERILERI (Kisi Bazli)
+### 3.3 SEANS VERILERI (Kisi Bazli)
 **Kaynak:** Seans sayfasi girisi → `seanslar` tablosu
 
 | Alan | Icerik |
@@ -89,7 +125,7 @@ Kurumsal psikologun **2.080+ belediye personelini** Notion benzeri kullanici dos
 | Ses Kaydi | Referans path |
 | Transkript | Whisper API ciktisi |
 
-### 2.4 AI ANALIZI (Otomatik)
+### 3.4 AI ANALIZI (Otomatik)
 **Kaynak:** Transkript + context → AI ciktisi
 
 | Cikti | Aciklama |
@@ -102,7 +138,7 @@ Kurumsal psikologun **2.080+ belediye personelini** Notion benzeri kullanici dos
 
 ---
 
-## 3. Seans Protokolu (20-30 Dakika)
+## 4. Seans Protokolu (20-30 Dakika)
 
 ### Seans Oncesi (Hazirlik)
 Psikolog seans baslamadan once su verileri gorur:
@@ -156,7 +192,7 @@ Psikolog seans baslamadan once su verileri gorur:
 
 ---
 
-## 4. Dinamik Triyaj Hesaplama
+## 5. Dinamik Triyaj Hesaplama
 
 ### Triyaj Nedir?
 Triyaj = Kisinin veya mudurlukun **final risk durumu**. Gorusme onceliklendirmesi icin degil, analiz sonucu olarak kullanilir.
@@ -215,9 +251,9 @@ MUD.TRIYAJ = (Denge × 0.25) + (RuhSag × 0.25) + (Ort.SCL × 0.25) + (Ort.Seans
 
 ---
 
-## 5. Sayfa Yapilari
+## 6. Sayfa Yapilari
 
-### 5.1 Seans Sayfasi
+### 6.1 Seans Sayfasi
 **Sol Panel (Referans - Salt Okunur):**
 - Kunye (ad, yas, gorev, kidem)
 - Mudurluk ozeti (sonuc metni + denge + risk)
@@ -230,7 +266,7 @@ MUD.TRIYAJ = (Denge × 0.25) + (RuhSag × 0.25) + (Ort.SCL × 0.25) + (Ort.Seans
 - Tab 3: Plan + Takip (hedef, ev odevi, randevu)
 - Tab 4: Sentez + AI (transkript, AI analiz, final not)
 
-### 5.2 Dashboard
+### 6.2 Dashboard
 - Oncelikli takip listesi (yuksek riskli kisiler)
 - Mudurluk ozet tablosu:
   - Mudurluk adi
@@ -241,12 +277,12 @@ MUD.TRIYAJ = (Denge × 0.25) + (RuhSag × 0.25) + (Ort.SCL × 0.25) + (Ort.Seans
   - Ortalama seans riski
 - Ilerleme gostergesi (gorusulen/toplam)
 
-### 5.3 Triyaj Listesi
+### 6.3 Triyaj Listesi
 - Filtreler: Mudurluk, risk kategorisi, SCL-90 durumu, gorusme durumu
 - Tablo: Kisi, mudurluk, SCL-90, seans sayisi, triyaj puani, kategori
 - Dinamik siralama
 
-### 5.4 Mudurluk Analiz
+### 6.4 Mudurluk Analiz
 **Anket Bolumu:**
 - Sonuc ozeti
 - Guclu yonler
@@ -259,14 +295,14 @@ MUD.TRIYAJ = (Denge × 0.25) + (RuhSag × 0.25) + (Ort.SCL × 0.25) + (Ort.Seans
 - Tekrar eden temalar (otomatik + manuel)
 - Mudurluk klinik notu (psikolog yazar)
 
-### 5.5 Takvim
+### 6.5 Takvim
 - Haftalik gorunum
 - Randevu ekleme/duzenleme
 - Mudurluk takibi (hangi mudurlukle ne kadar gorusulmus)
 
 ---
 
-## 6. Veritabani Semasi
+## 7. Veritabani Semasi
 
 ### Tablolar
 | Tablo | Aciklama |
@@ -286,7 +322,7 @@ MUD.TRIYAJ = (Denge × 0.25) + (RuhSag × 0.25) + (Ort.SCL × 0.25) + (Ort.Seans
 
 ---
 
-## 7. Teknik Bilgiler
+## 8. Teknik Bilgiler
 
 ### Teknoloji Stack
 - **Backend:** Flask 3.x
@@ -330,7 +366,7 @@ anket-1--2/
 
 ---
 
-## 8. Onemli Kurallar
+## 9. Onemli Kurallar
 
 1. **Gorusmeler karisik** - Mudurluk veya risk sirasina gore degil, musaitlige gore
 2. **Triyaj dinamik** - Her veri eklendikce otomatik guncellenir
@@ -341,10 +377,13 @@ anket-1--2/
 
 ---
 
-## 9. Terminoloji
+## 10. Terminoloji
 
 | Terim | Anlam |
 |-------|-------|
+| Kurumsal Fotograf | Anket verileriyle elde edilen mudurluk bazli genel resim |
+| Bireysel Fotograf | SCL-90 ile elde edilen kisi bazli semptom profili |
+| Kanit Temelli | Veri kaynaklarina dayali, olculebilir bulgular |
 | Triyaj | Final risk skoru (0-100) |
 | Denge | Kurum Destegi - Is Stresi |
 | GSI | Global Severity Index (SCL-90) |
@@ -355,7 +394,7 @@ anket-1--2/
 
 ---
 
-## 10. Degisiklik Gecmisi
+## 11. Degisiklik Gecmisi
 
 | Tarih | Degisiklik |
 |-------|------------|
@@ -363,6 +402,9 @@ anket-1--2/
 | 2026-01-28 | Seans protokolu eklendi (20-30 dk) |
 | 2026-01-28 | Dinamik triyaj hesaplama eklendi |
 | 2026-01-28 | AI supervizyon analizi eklendi |
+| 2026-01-28 | Stratejik perspektif eklendi (Makro→Mikro, Sunum Hedefi) |
+| 2026-01-28 | Gorusme sistemi detaylari eklendi (zorunlu/gonullu) |
+| 2026-01-28 | Terminolojiye kanit temelli kavramlar eklendi |
 
 ---
 
